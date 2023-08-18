@@ -1,0 +1,27 @@
+
+
+Document object: Simple key/val map 
+On unsuccessful key, return ""
+Data Types: String, List, Document
+
+
+Program ::= Statement*
+
+Statement ::= ControlFlow | Expression
+
+ControlFlow ::= For | If
+
+For ::= 'for' Ident ':' Expression { Statement* }
+
+If ::= 'if' Expression { Statement * } ('else' { Statement* })?
+
+Expression ::= Lhs Rhs? ';'
+Lhs ::= (Literal | '(' Expression ')') PostfixOp
+Rhs ::= BinOp Expression
+
+PostfixOp ::= ('.' Ident)+
+
+BinOp ::= ++ | == | !=
+
+Literal ::= '"' .* '"' | Ident
+
